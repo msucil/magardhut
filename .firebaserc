@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "magardhut-1f10d": {
+      "hosting": {
+        "magardhut": [
+          "magardhut-1f10d"
+        ]
+      }
+    }
+  }
+}
