@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="primary-toolbar">
   <button
     type="button"
     aria-label="Toggle sidenav"
@@ -15,23 +15,24 @@
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
   <span>Magardhut</span>
-  <mat-nav-list>
-    <a mat-list-item href="#">Link 1</a>
-    <a mat-list-item href="#">Link 2</a>
-    <a mat-list-item href="#">Link 3</a>
+  <mat-nav-list fxLayout="row" class="ml-auto text-white" *ngIf="!(isHandset$ | async)">
+    <a mat-list-item class="text-white"  href="#" routerLink="/home">Home</a>
+    <a mat-list-item class="text-white" href="#" routerLink="/learn">Learn Magardhut</a>
+    <a mat-list-item class="text-white" href="#" routerLink="/literature">Literature</a>
+    <a mat-list-item class="text-white" href="#" routerLink="/about-us">About Us</a>
   </mat-nav-list>
 
 </mat-toolbar>
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
+<mat-sidenav-container class="sidenav-container" >
+  <mat-sidenav #drawer class="sidenav" fixedInViewport fixedTopGap="55"
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]=" 'over' "
-               [opened]="false">
-    <mat-toolbar>Menu</mat-toolbar>
+               [opened]="false" >
     <mat-nav-list fxLayout="column" >
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item class="text-white"  href="#">Home</a>
+      <a mat-list-item class="text-white" href="#">Learn Magardhut</a>
+      <a mat-list-item class="text-white" href="#">Literature</a>
+      <a mat-list-item class="text-white" href="#">About Us</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

@@ -8,6 +8,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 const MAT_MODULES = [
   MatIconModule,
@@ -20,7 +21,8 @@ const MAT_MODULES = [
   MatCardModule,
   MatMenuModule,
   MatSidenavModule,
-  ];
+  FlexLayoutModule
+];
 
 @NgModule({
   declarations: [],

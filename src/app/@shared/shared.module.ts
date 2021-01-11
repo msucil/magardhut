@@ -10,6 +10,7 @@ import {MainNavComponent} from './main-nav/main-nav.component';
 import {RouterModule} from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { ThemeModule } from '../@theme/theme.module';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { ThemeModule } from '../@theme/theme.module';
     CommonModule,
     LayoutModule,
     ThemeModule,
-    RouterModule
+    RouterModule,
   ]
 })
 export class SharedModule {
