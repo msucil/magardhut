@@ -16,20 +16,20 @@
   </button>
   <span>Magardhut</span>
   <mat-nav-list fxLayout="row" class="ml-auto text-white" *ngIf="!(isHandset$ | async)">
-    <a mat-list-item class="text-white"  href="#" routerLink="/home">Home</a>
-    <a mat-list-item class="text-white" href="#" routerLink="/learn">Learn Magardhut</a>
+    <a mat-list-item class="text-white" href="#" [routerLink]="['/home']">Home</a>
+    <a mat-list-item class="text-white" href="#" [routerLink]="['/learn']">Learn Magardhut</a>
     <a mat-list-item class="text-white" href="#" routerLink="/literature">Literature</a>
     <a mat-list-item class="text-white" href="#" routerLink="/about-us">About Us</a>
   </mat-nav-list>
 
 </mat-toolbar>
-<mat-sidenav-container class="sidenav-container" >
+<mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport fixedTopGap="55"
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]=" 'over' "
-               [opened]="false" >
-    <mat-nav-list fxLayout="column" >
-      <a mat-list-item class="text-white"  href="#">Home</a>
+               [opened]="false">
+    <mat-nav-list fxLayout="column">
+      <a mat-list-item class="text-white" href="#">Home</a>
       <a mat-list-item class="text-white" href="#">Learn Magardhut</a>
       <a mat-list-item class="text-white" href="#">Literature</a>
       <a mat-list-item class="text-white" href="#">About Us</a>
