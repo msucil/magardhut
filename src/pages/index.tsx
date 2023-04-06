@@ -22,7 +22,7 @@ export default function Home({ posts }) {
           {
             posts.map(({ id, date, title }) =>
             (
-              <li key={id}><Link href={`/posts/id`}>{title} </Link><br /> {id} <br /> {date}</li>
+              <li key={id}><Link href={`/posts/${id}`}>{title} </Link><br /> {id} <br /> {date}</li>
             )
             )
           }

@@ -2,7 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import { remark } from "remark";
-import html from "remark-html";
+import remarkHtml from "remark-html";
 
 const postDirectory = path.join(process.cwd(), 'posts');
 
@@ -39,14 +39,16 @@ export async function getPost(id: string) {
     const content = fs.readFileSync(filePath, 'utf-8');
 
     const markdown = matter(content);
-
-    const processedContent = await remark().use(html).parse(markdown.content);
+    
+    const processedContent = await remark()
+        .use(remarkHtml, {sanitize: true})
+        .process(markdown.content);
     const htmlContent = processedContent.toString();
-    console.log('html', htmlContent);
+    console.log('html', processedContent.toString);
 
     return {
         id,
         htmlContent,
-        ... markdown.data
+        ...markdown.data
     }
 };
