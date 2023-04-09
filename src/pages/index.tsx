@@ -1,13 +1,15 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import { getSortedPostsData } from '@/lib/posts'
+import { Post, getSortedPostsData } from '@/lib/posts'
 import Link from 'next/link'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({ posts }) {
+export default function Home({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
+
+  // const posts: any = props.posts;
+
   return (
     <>
       <Head>
@@ -16,7 +18,7 @@ export default function Home({ posts }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <div className='container'>
         <h5>Blog</h5>
         <ul>
           {
@@ -27,16 +29,16 @@ export default function Home({ posts }) {
             )
           }
         </ul>
-      </main>
+      </div>
     </>
   )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps<{posts: Post[]}> = async (context) => {
   const posts = getSortedPostsData();
   return {
     props: {
-      posts,
-    },
+      posts
+    }
   };
 }
