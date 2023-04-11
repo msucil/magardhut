@@ -2,11 +2,11 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import { remark } from "remark";
-import html from "remark-html";
+import remarkHtml from "remark-html";
 
 const postDirectory = path.join(process.cwd(), 'posts');
 
-export function getSortedPostsData() {
+export function getSortedPostsData(): Post[] {
     const fileNames = fs.readdirSync(postDirectory);
     const posts = fileNames.map((fileName: string) => {
 
@@ -19,9 +19,11 @@ export function getSortedPostsData() {
         const matterResult = matter(fileContent);
 
         return {
-            id,
-            ...matterResult.data
-        };
+            id: id,
+            title: matterResult.data.title,
+            date: matterResult.data.date,
+        }
+        
     });
 
     return posts.sort((a, b) => {
@@ -39,14 +41,23 @@ export async function getPost(id: string) {
     const content = fs.readFileSync(filePath, 'utf-8');
 
     const markdown = matter(content);
-
-    const processedContent = await remark().use(html).parse(markdown.content);
+    
+    const processedContent = await remark()
+        .use(remarkHtml, {sanitize: true})
+        .process(markdown.content);
     const htmlContent = processedContent.toString();
-    console.log('html', htmlContent);
 
     return {
-        id,
-        htmlContent,
-        ... markdown.data
+        id: id,
+        content: htmlContent,
+        title: markdown.data.title,
+        date: markdown.data.date
     }
 };
+
+export interface Post {
+    id: string;
+    title: string;
+    date: string;
+    content?: string;
+}

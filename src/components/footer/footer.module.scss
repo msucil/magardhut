@@ -1,0 +1,16 @@
+
+ul.footer-link {
+    list-style: none;
+    list-style-position: outside;
+    padding-left: 0;
+
+    li {
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+
+        a {
+            text-decoration: none;
+            color: #212529;
+        }
+    }
+}
