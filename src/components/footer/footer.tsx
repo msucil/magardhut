@@ -1,3 +1,4 @@
+import styles from './footer.module.scss';
 
 function Footer() {
     return (<>
@@ -10,13 +11,13 @@ function Footer() {
                     </div>
                     <div className="col-md-4">
                         <div><strong>Learn</strong></div>
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item">Home</li>
-                            <li className="list-group-item">Vocabolaries</li>
-                            <li className="list-group-item">Basic Grammer</li>
-                            <li className="list-group-item">Conversation</li>
-                            <li className="list-group-item">Formation of Words</li>
-                            <li className="list-group-item">Dictionary</li>
+                        <ul className={styles['footer-link']}>
+                            <li className=""><a href=''>Home</a></li>
+                            <li className=""><a href=''>Vocabolaries</a></li>
+                            <li className=""><a href=''>Basic Grammer</a></li>
+                            <li className=""><a href=''>Conversation</a></li>
+                            <li className=""><a href=''>Formation of Words</a></li>
+                            <li className=""><a href=''>Dictionary</a></li>
                         </ul>
                     </div>
                     <div className="col-md-4"></div>

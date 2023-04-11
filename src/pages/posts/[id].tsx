@@ -2,6 +2,8 @@ import { Post, getPost, getSortedPostsData } from "@/lib/posts";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { ParsedUrlQuery } from "querystring";
 
+//ref: https://wallis.dev/blog/nextjs-getstaticprops-and-getstaticpaths-with-typescript
+
 export default function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
     return (
         <>
