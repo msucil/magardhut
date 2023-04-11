@@ -46,12 +46,12 @@ export async function getPost(id: string) {
         .use(remarkHtml, {sanitize: true})
         .process(markdown.content);
     const htmlContent = processedContent.toString();
-    console.log('html', processedContent.toString);
 
     return {
-        id,
-        htmlContent,
-        ...markdown.data
+        id: id,
+        content: htmlContent,
+        title: markdown.data.title,
+        date: markdown.data.date
     }
 };
 

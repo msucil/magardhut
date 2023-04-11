@@ -19,15 +19,15 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className='min-vh-100'>
-        <section className='col-md-12 bg-warning' style={{ height: ' 25vh !important' }}>
+      <div className='min-vh-100 '>
+        <section className='col-md-12 bg-warning mb-3' style={{ height: ' 25vh !important' }}>
           <section className='text-center p-5'>
             <h1>Magardhut</h1>
             <p>Platform for Learning Magar Language (Dhut)</p>
           </section>
 
         </section>
-        <div className='container mt-3'>
+        <div className='container'>
           <div className="row mb-3">
             <div className="col-md-4">
               <Card>
@@ -96,9 +96,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
           </div>
         </div>
       </div>
-      <footer>
-        &copy; MagarDhut | Platform for learning magar language
-      </footer>
+      
     </>
   )
 }
