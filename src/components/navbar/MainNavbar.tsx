@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button"
 function MainNavbar() {
     return (
         <>
-    { <Navbar bg="light" expand="lg">
+    { <Navbar bg="dark" expand="lg" sticky='top' variant='dark'>
       <Container fluid>
         <Navbar.Brand href="/">Magar Dhut</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -20,16 +20,41 @@ function MainNavbar() {
             navbarScroll
           >
             <Nav.Link href="/">Home</Nav.Link>
-            <NavDropdown title="Learn" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="/learn">Dhut</NavDropdown.Item>
-              <NavDropdown.Item href="/learn">Kaike</NavDropdown.Item>
+            <NavDropdown title="Vocabularies" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="/learn">Parts of Body/Sarirka Angaharu ko naam</NavDropdown.Item>
+              <NavDropdown.Item href="/learn">Diseases/rogharu</NavDropdown.Item>
+              <NavDropdown.Item href="/learn">Kinship/Shaino</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action5">
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
+            <NavDropdown title="Grammer" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="/learn">Dhut</NavDropdown.Item>
+              <NavDropdown.Item href="/learn">Sabdhakosh</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action5">
+                Something else here
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Conversation" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="/learn">Dhut</NavDropdown.Item>
+              <NavDropdown.Item href="/learn">Sabdhakosh</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action5">
+                Something else here
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Formation of Words" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="/learn">Dhut</NavDropdown.Item>
+              <NavDropdown.Item href="/learn">Sabdhakosh</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action5">
+                Something else here
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link href="/dictionary" >
+              Magar to Nepali Dictionary
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
