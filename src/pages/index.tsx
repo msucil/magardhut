@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import { Post, getSortedPostsData } from '@/lib/posts'
+import Image from 'next/image'
 import Link from 'next/link'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { Button, Card } from 'react-bootstrap'
+import CategoryCard from '@/components/categoryCard/categoryCard'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,78 +26,75 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
             <h1>Magardhut</h1>
             <p>Platform for Learning Magar Language (Dhut)</p>
           </section>
-
         </section>
+
         <div className='container'>
           <div className="row mb-3">
-            <div className="col-md-4">
-              <Card>
-                {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-                <Card.Body>
-                  <Card.Title className='text-center'>Vocabularies</Card.Title>
-                  <Card.Text className='text-justify'>
-                    Learn Magar Language Vocabolaries on different categories
-                  </Card.Text>
-                </Card.Body>
-                <Card.Footer>
-                  <Button variant="primary">Go somewhere</Button>
-                </Card.Footer>
-              </Card>
-            </div>
-            <div className="col-md-4">
-              <Card>
-                {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-                <Card.Body>
-                  <Card.Title className='text-center'>Basic Grammer</Card.Title>
-                  <Card.Text className='text-justify'>
-                    Learn Magar Language Grammer and Sentence Composition
-                  </Card.Text>
-                </Card.Body>
-                <Card.Footer>
-                  <Button variant="primary">Go somewhere</Button>
-                </Card.Footer>
-              </Card>
 
+            <div className="col-md-6">
+              <CategoryCard
+                image='/undraw_Books.png'
+                date='Last Updated 3 mins ago'
+                title='शब्दावलीहरू (Vocabularies)'
+                route='/learn/vocabularies'
+                description='Learn Magar words to speak magar language more proficently'
+              />
             </div>
 
-            <div className="col-md-4">
-              <Card>
-                {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-                <Card.Body>
-                  <Card.Title className='text-center'>Conversation</Card.Title>
-                  <Card.Text className='text-justify'>
-                    Learn How to start conversation on different topics
-                  </Card.Text>
-                </Card.Body>
-                <Card.Footer>
-                  <Button variant="primary">Go somewhere</Button>
-                </Card.Footer>
-              </Card>
-
+            <div className="col-md-6">
+              <CategoryCard
+                image='/undraw_Books.png'
+                date='Last Updated 3 mins ago'
+                route='/learn/grammer'
+                title='सामान्य व्याकरण (Basic Grammer)'
+                description='Learn Basic Grammer to Compose Sentence more easily'
+              />
             </div>
 
-          </div>
-
-          <div className="row">
-            <div className="col-md-4">
-              <Card>
-                {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-                <Card.Body>
-                  <Card.Title className='text-center'>Formation of Words</Card.Title>
-                  <Card.Text className='text-justify'>
-                    Learn How to form words in different scenarios
-                  </Card.Text>
-                </Card.Body>
-                <Card.Footer>
-                  <Button variant="primary">Go somewhere</Button>
-                </Card.Footer>
-              </Card>
-
+            <div className="col-md-6">
+              <CategoryCard
+                image='/undraw_Book_lover.png'
+                date='Last Updated 3 mins ago'
+                route='/learn/words'
+                title='मगर भाषामा शब्द निर्माण (Formation of Words)'
+                description='Learn how to compose words'
+              />
             </div>
+
+            <div className="col-md-6">
+              <CategoryCard
+                image='/undraw_Working.png'
+                date='Last Updated 3 mins ago'
+                title='कुराकानी (Conversation)'
+                route='/learn/conversations'
+                description='Learn how to talk with your friends and family'
+              />
+            </div>
+
+            <div className="col-md-6">
+              <CategoryCard
+                image='/undraw_Personal_notebook.png'
+                date='Last Updated 3 mins ago'
+                title='शब्दकोष (Dictionary)'
+                route='/dictionary'
+                description='Browse Nepali words to know them in Magar Language'
+              />
+            </div>
+
+            <div className="col-md-6">
+              <CategoryCard
+                image='/undraw_Post.png'
+                date='Last Updated 3 mins ago'
+                title='साहित्य (Literature)'
+                route='/literatures'
+                description='Read and Learn Poems, Articles in Magar Language'
+              />
+            </div>
+
           </div>
         </div>
+
       </div>
-      
     </>
   )
 }
