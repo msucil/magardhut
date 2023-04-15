@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import { Post, getSortedPostsData } from '@/lib/posts'
-import Image from 'next/image'
-import Link from 'next/link'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import CategoryCard from '@/components/categoryCard/categoryCard'
 
