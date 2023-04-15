@@ -10,6 +10,7 @@ export interface Article {
     slug: string,
     date: string,
     description?: string
+    url?: string
 }
 
 export interface ArticleDetail extends Article {

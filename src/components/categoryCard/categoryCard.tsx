@@ -32,7 +32,7 @@ function CategoryCard(props: CategoryCardProps) {
                     <div className={props.image ? 'col-md-8' : 'col-md-12'}>
                         <div className="card-body">
                             <h5 className="card-title">
-                                <Link href={props.route} className={`${styles.link} stretched-link`}>
+                                <Link href={props.route} className='text-decoration-none text-body stretched-link'>
                                     {props.title}
                                 </Link>
                             </h5>

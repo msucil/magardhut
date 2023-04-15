@@ -1,23 +1,23 @@
-import styles from './footer.module.scss';
+import Link from "next/link";
 
 function Footer() {
     return (<>
-        <footer style={{ backgroundColor: '#8080804f' }}>
+        <footer className='bg-dark text-white-50'>
             <div className="container pt-4 pb-4">
-                <div className="row bg-grey ">
+                <div className="row">
                     <div className="col-md-4 text-center">
-                        <div >Magar Dhut</div>
+                        <div ><strong>Magar Dhut</strong></div>
                         <div>Platform for Learning Magar Language</div>
                     </div>
                     <div className="col-md-4">
                         <div><strong>Learn</strong></div>
-                        <ul className={'list-unstyled'}>
-                            <li className=""><a href='' className='link-offset-2 link-underline link-underline-opacity-10 link-secondary'>Home</a></li>
-                            <li className=""><a className='link-offset-2 link-underline link-underline-opacity-10 link-secondary' href=''>Vocabolaries</a></li>
-                            <li className=""><a className='link-offset-2 link-underline link-underline-opacity-10 link-secondary' href=''>Basic Grammer</a></li>
-                            <li className=""><a className='link-offset-2 link-underline link-underline-opacity-10 link-secondary' href=''>Conversation</a></li>
-                            <li className=""><a className='link-offset-2 link-underline link-underline-opacity-10 link-secondary' href=''>Formation of Words</a></li>
-                            <li className=""><a className='link-offset-2 link-underline link-underline-opacity-10 link-secondary' href=''>Dictionary</a></li>
+                        <ul className='list-unstyled'>
+                            <li className=""><Link href='/' className='link-offset-2 link-underline link-underline-opacity-25 link-secondary'>Home</Link></li>
+                            <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/learn/vocabularies'>Vocabolaries</Link></li>
+                            <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/learn/grammer'>Grammer</Link></li>
+                            <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/learn/conversations'>Conversations</Link></li>
+                            <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/learn/words'>Formation of Words</Link></li>
+                            <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/dictionary'>Dictionary</Link></li>
                         </ul>
                     </div>
                     <div className="col-md-4"></div>

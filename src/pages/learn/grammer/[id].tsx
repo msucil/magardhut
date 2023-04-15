@@ -15,12 +15,12 @@ export default function ArticleDetail({ article }: InferGetStaticPropsType<typeo
             <div className='min-vh-100 '>
                 <section className='bg-warning mb-3 d-flex'>
                     <div className='text-center' style={{ width: '100%', marginTop: '6rem', marginBottom: '8rem' }}>
-                        <h1 style={{ textShadow: '1px 2px 2px BLACK', fontSize: '5rem' }}>{article.title}</h1>
+                        <h1 style={{ textShadow: '1px 2px 2px BLACK', fontSize: '4rem' }}>{article.title}</h1>
                         <h4>{article.description}</h4>
                     </div>
                 </section>
                 <div className='container'>
-                    <article>
+                    <article className="bg-body shadow boarder-0 boarder-end boarder-bottom p-5" style={{marginTop: '-5rem'}}>
                         <div dangerouslySetInnerHTML={{ __html: article?.content || '' }}>
                         </div>
                     </article>

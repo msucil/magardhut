@@ -1,7 +1,7 @@
+import ArticleBrief from '@/components/articleBrief';
 import { Article, getArticles } from '@/lib/learn';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head'
-import Link from 'next/link';
 
 export default function GrammerHome({ articles }: InferGetStaticPropsType<typeof getStaticProps>) {
 
@@ -25,18 +25,8 @@ export default function GrammerHome({ articles }: InferGetStaticPropsType<typeof
           <div className="row mt-5">
             {
               articles.map((a) => (
-
                 <div className="col-md-6" key={a.id}>
-                  <div className="p-4 border-0 border-end border-bottom border-secondary-subtle position-relative shadow mb-5">
-                    <div className="article-body">
-                      <h4>
-                        <Link className='text-decoration-none text-body stretched-link' href={`/learn/grammer/${a.id}`}>{a.title}</Link>
-                      </h4>
-                      <div className="article-text">{a.description}</div>
-                      <div className="text-body-secondary small lh-lg"><i className="bi bi-calendar-week"></i> {a.date}</div>
-                    </div>
-                  </div>
-
+                  <ArticleBrief title={a.title} description={a.description || ''} date={a.date} url={`/learn/grammer/${a.id}`}></ArticleBrief>
                 </div>
               )
               )}
