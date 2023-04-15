@@ -6,7 +6,7 @@ function Layout({ children }: {children: ReactNode}) {
     return (
         <>
         <MainNavbar/>
-        <div>{children}</div>
+        {children}
         <Footer/>
         </>
     );

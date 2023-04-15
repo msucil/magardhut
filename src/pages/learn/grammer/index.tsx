@@ -1,13 +1,9 @@
+import { Article, getArticles } from '@/lib/learn';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import Link from 'next/link'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { Button, Card } from 'react-bootstrap'
-import Image from 'next/image'
+import Link from 'next/link';
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
+export default function GrammerHome({ articles }: InferGetStaticPropsType<typeof getStaticProps>) {
 
   // const posts: any = props.posts;
 
@@ -28,10 +24,54 @@ export default function Home() {
 
         </section>
         <div className='container'>
-          
+          <div className="list-group">
+            {
+              articles.map((a) => (
+                <Link className='list-group-item list-group-item-action active' aria-current='true' key={a.id}
+                  href={`/learn/grammer/${a.id}`}
+                >
+                  <div className="d-flex w-100 justify-content-between">
+                    <h5 className="mb-1">{a.title}</h5>
+                    <small>{a.date}</small>
+                  </div>
+                  <p className="mb-1">{a.description}</p>
+                  {/* <small>And some small print.</small> */}
+                </Link>
+                // <a href="#" className="" aria-current="true" key={a.id}>
+
+                // </a>
+              )
+              )}
+
+            <a href="#" className="list-group-item list-group-item-action">
+              <div className="d-flex w-100 justify-content-between">
+                <h5 className="mb-1">List group item heading</h5>
+                <small className="text-body-secondary">3 days ago</small>
+              </div>
+              <p className="mb-1">Some placeholder content in a paragraph.</p>
+              <small className="text-body-secondary">And some muted small print.</small>
+            </a>
+            <a href="#" className="list-group-item list-group-item-action">
+              <div className="d-flex w-100 justify-content-between">
+                <h5 className="mb-1">List group item heading</h5>
+                <small className="text-body-secondary">3 days ago</small>
+              </div>
+              <p className="mb-1">Some placeholder content in a paragraph.</p>
+              <small className="text-body-secondary">And some muted small print.</small>
+            </a>
+          </div>
         </div>
       </div>
 
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps<{ articles: Article[] }> = async (context) => {
+  const articles = getArticles('grammer');
+  return {
+    props: {
+      articles
+    }
+  };
 }

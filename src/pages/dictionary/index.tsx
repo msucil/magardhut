@@ -19,7 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className='min-vh-100 '>
-        <section className='col-md-12 bg-warning mb-3' style={{ height: ' 25vh !important' }}>
+        <section className='bg-warning mb-3' style={{ height: ' 25vh !important' }}>
           <section className='text-center p-5'>
             <h1>Dictionary</h1>
             <p>Magar to Nepali and Nepali to Magar Dictionary</p>

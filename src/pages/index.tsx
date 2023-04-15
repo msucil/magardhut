@@ -21,11 +21,11 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className='min-vh-100 '>
-        <section className='col-md-12 bg-warning mb-3' style={{ height: ' 25vh !important' }}>
-          <section className='text-center p-5'>
-            <h1>Magardhut</h1>
-            <p>Platform for Learning Magar Language (Dhut)</p>
-          </section>
+        <section className='bg-warning mb-3 d-flex'>
+          <div className='text-center' style={{ width: '100%', marginTop: '6rem', marginBottom: '8rem' }}>
+            <h1 style={{ textShadow: '1px 2px 2px BLACK', fontSize: '5rem' }}>Magar Dhut</h1>
+            <h4>Platform for Learning Magar Language (Dhut)</h4>
+          </div>
         </section>
 
         <div className='container'>
@@ -34,7 +34,6 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
             <div className="col-md-6">
               <CategoryCard
                 image='/undraw_Books.png'
-                date='Last Updated 3 mins ago'
                 title='शब्दावलीहरू (Vocabularies)'
                 route='/learn/vocabularies'
                 description='Learn Magar words to speak magar language more proficently'
@@ -44,7 +43,6 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
             <div className="col-md-6">
               <CategoryCard
                 image='/undraw_Books.png'
-                date='Last Updated 3 mins ago'
                 route='/learn/grammer'
                 title='सामान्य व्याकरण (Basic Grammer)'
                 description='Learn Basic Grammer to Compose Sentence more easily'
@@ -54,7 +52,6 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
             <div className="col-md-6">
               <CategoryCard
                 image='/undraw_Book_lover.png'
-                date='Last Updated 3 mins ago'
                 route='/learn/words'
                 title='मगर भाषामा शब्द निर्माण (Formation of Words)'
                 description='Learn how to compose words'
@@ -64,7 +61,6 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
             <div className="col-md-6">
               <CategoryCard
                 image='/undraw_Working.png'
-                date='Last Updated 3 mins ago'
                 title='कुराकानी (Conversation)'
                 route='/learn/conversations'
                 description='Learn how to talk with your friends and family'
@@ -74,7 +70,6 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
             <div className="col-md-6">
               <CategoryCard
                 image='/undraw_Personal_notebook.png'
-                date='Last Updated 3 mins ago'
                 title='शब्दकोष (Dictionary)'
                 route='/dictionary'
                 description='Browse Nepali words to know them in Magar Language'
@@ -84,7 +79,6 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
             <div className="col-md-6">
               <CategoryCard
                 image='/undraw_Post.png'
-                date='Last Updated 3 mins ago'
                 title='साहित्य (Literature)'
                 route='/literatures'
                 description='Read and Learn Poems, Articles in Magar Language'
@@ -93,7 +87,6 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
 
           </div>
         </div>
-
       </div>
     </>
   )

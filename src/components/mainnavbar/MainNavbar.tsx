@@ -2,22 +2,20 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
-import Form from "react-bootstrap/Form"
-import Button from "react-bootstrap/Button"
 
 
 function MainNavbar() {
   return (
     <>
-      {<Navbar bg="dark" expand="lg" sticky='top' variant='dark'>
-        <Container fluid>
-          <Navbar.Brand href="/">मगर ढूट</Navbar.Brand>
+      {<Navbar  expand="lg" sticky='top'>
+        <Container>
+          <Navbar.Brand href="/" style={{ textShadow: '0px 0px 1px BLACK'}}>मगर ढूट</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
               className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: '100px' }}
-              navbarScroll
+              // style={{ maxHeight: '100px' }}
+              // navbarScroll
             >
               <NavDropdown title="शब्दावलीहरू" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="/learn">Parts of Body/Sarirka Angaharu ko naam</NavDropdown.Item>

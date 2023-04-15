@@ -6,6 +6,11 @@ const nextConfig = {
   // sassOptions: {
   //   includePaths: [path.join(__dirname, 'styles')],
   // },
+  i18n: {
+    locales: ['en', 'np'],
+    defaultLocale: 'np',
+    localeDetection: true,
+  },
 }
 
 module.exports = nextConfig
