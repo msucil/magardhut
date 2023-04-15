@@ -20,7 +20,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
       <div className='min-vh-100 '>
         <section className='bg-warning mb-3 d-flex'>
           <div className='text-center' style={{ width: '100%', marginTop: '6rem', marginBottom: '8rem' }}>
-            <h1 style={{ textShadow: '1px 2px 2px BLACK', fontSize: '5rem' }}>Magar Dhut</h1>
+            <h1 style={{ textShadow: '1px 2px 2px BLACK', fontSize: '5rem' }}>मगर ढूट</h1>
             <h4>Platform for Learning Magar Language (Dhut)</h4>
           </div>
         </section>
