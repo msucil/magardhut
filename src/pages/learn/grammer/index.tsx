@@ -1,4 +1,5 @@
 import ArticleBrief from '@/components/articleBrief';
+import PageHeader from '@/components/pageHeader';
 import { Article, getArticles } from '@/lib/learn';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head'
@@ -15,12 +16,15 @@ export default function GrammerHome({ articles }: InferGetStaticPropsType<typeof
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className='min-vh-100 '>
-        <section className='bg-warning mb-3 d-flex'>
+        <PageHeader title='व्याकरण (Grammer)'
+         description='Learn how to read, write and speak with correct grammer in Magar Language (Dhut)'
+        background='bg-warning'></PageHeader>
+        {/* <section className='bg-warning mb-3 d-flex'>
           <div className='text-center' style={{ width: '100%', marginTop: '6rem', marginBottom: '8rem' }}>
-            <h1 style={{ textShadow: '1px 2px 2px BLACK', fontSize: '5rem' }}>व्याकरण (Grammer)</h1>
-            <h4>Learn how to read, write and speak with correct grammer in Magar Language (Dhut)</h4>
+            <h1 style={{ textShadow: '1px 2px 2px BLACK', fontSize: '5rem' }}></h1>
+            <h4></h4>
           </div>
-        </section>
+        </section> */}
         <section className='container'>
           <div className="row mt-5">
             {
