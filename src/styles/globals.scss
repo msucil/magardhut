@@ -12,10 +12,16 @@
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/utilities";
 
+// Reboot
+@import "bootstrap/scss/reboot";
+
+// a {
+//     text-decoration: none;
+//     color: var(--bs-body-color);
+// }
 
 // Layout & components
-@import "bootstrap/scss/root";
-@import "bootstrap/scss/reboot";
+
 @import "bootstrap/scss/type";
 @import "bootstrap/scss/images";
 @import "bootstrap/scss/containers";
@@ -52,6 +58,8 @@
 // Utilities
 @import "bootstrap/scss/utilities/api";
 @import "bootstrap/scss/root";
+
+@import "bootstrap-icons/font/bootstrap-icons.scss";
 
 //optionsl
 // @import "bootstrap/scss/reboot";

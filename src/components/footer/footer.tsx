@@ -11,13 +11,13 @@ function Footer() {
                     </div>
                     <div className="col-md-4">
                         <div><strong>Learn</strong></div>
-                        <ul className={styles['footer-link']}>
-                            <li className=""><a href=''>Home</a></li>
-                            <li className=""><a href=''>Vocabolaries</a></li>
-                            <li className=""><a href=''>Basic Grammer</a></li>
-                            <li className=""><a href=''>Conversation</a></li>
-                            <li className=""><a href=''>Formation of Words</a></li>
-                            <li className=""><a href=''>Dictionary</a></li>
+                        <ul className={'list-unstyled'}>
+                            <li className=""><a href='' className='link-offset-2 link-underline link-underline-opacity-10 link-secondary'>Home</a></li>
+                            <li className=""><a className='link-offset-2 link-underline link-underline-opacity-10 link-secondary' href=''>Vocabolaries</a></li>
+                            <li className=""><a className='link-offset-2 link-underline link-underline-opacity-10 link-secondary' href=''>Basic Grammer</a></li>
+                            <li className=""><a className='link-offset-2 link-underline link-underline-opacity-10 link-secondary' href=''>Conversation</a></li>
+                            <li className=""><a className='link-offset-2 link-underline link-underline-opacity-10 link-secondary' href=''>Formation of Words</a></li>
+                            <li className=""><a className='link-offset-2 link-underline link-underline-opacity-10 link-secondary' href=''>Dictionary</a></li>
                         </ul>
                     </div>
                     <div className="col-md-4"></div>

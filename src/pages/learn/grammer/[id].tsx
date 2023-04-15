@@ -13,16 +13,17 @@ export default function ArticleDetail({ article }: InferGetStaticPropsType<typeo
                 <meta name="description" content={article.description} />
             </Head>
             <div className='min-vh-100 '>
-                <section className='col-md-12 bg-warning mb-3' style={{ height: ' 25vh !important' }}>
-                    <section className='text-center p-5'>
-                        <h1>{article.title}</h1>
-                        <p>{article.description}</p>
-                    </section>
-
+                <section className='bg-warning mb-3 d-flex'>
+                    <div className='text-center' style={{ width: '100%', marginTop: '6rem', marginBottom: '8rem' }}>
+                        <h1 style={{ textShadow: '1px 2px 2px BLACK', fontSize: '5rem' }}>{article.title}</h1>
+                        <h4>{article.description}</h4>
+                    </div>
                 </section>
                 <div className='container'>
-                    <div dangerouslySetInnerHTML={{ __html: article?.content || '' }}>
-                    </div>
+                    <article>
+                        <div dangerouslySetInnerHTML={{ __html: article?.content || '' }}>
+                        </div>
+                    </article>
                 </div>
             </div>
         </>);

@@ -16,6 +16,9 @@ dependencies:
   bootstrap:
     specifier: 5.3.0-alpha3
     version: 5.3.0-alpha3(@popperjs/core@2.11.7)
+  bootstrap-icons:
+    specifier: ^1.10.4
+    version: 1.10.4
   clsx:
     specifier: ^1.2.1
     version: 1.2.1
@@ -587,6 +590,10 @@ packages:
   /binary-extensions@2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
+
+  /bootstrap-icons@1.10.4:
+    resolution: {integrity: sha512-eI3HyIUmpGKRiRv15FCZccV+2sreGE2NnmH8mtxV/nPOzQVu0sPEj8HhF1MwjJ31IhjF0rgMvtYOX5VqIzcb/A==}
+    dev: false
 
   /bootstrap@5.3.0-alpha3(@popperjs/core@2.11.7):
     resolution: {integrity: sha512-FBhOWMxkCFr74hesJdchLXhqagPTXS+kRNU3gE0FR5Ki/AdPSz32Ik96Z28+yBluCnE/pc9st7l1yPwKgbtfSA==}
