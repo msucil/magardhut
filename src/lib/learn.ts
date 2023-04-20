@@ -1,8 +1,11 @@
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
+import rehypeSanitize from "rehype-sanitize";
 import { remark } from "remark";
+import remarkGfm from "remark-gfm";
 import remarkHtml from "remark-html";
+import emoji from 'remark-emoji';
 
 export interface Article {
     id: string,
@@ -64,7 +67,10 @@ export async function getArticleDetail(category: string, id: string) {
     const markdown = matter(content);
 
     const processedContent = await remark()
-        .use(remarkHtml, { sanitize: true })
+        .use(remarkGfm)
+        .use(emoji)
+        .use(remarkHtml, { sanitize: false })
+        // .use(rehypeSanitize)
         .process(markdown.content);
     const htmlContent = processedContent.toString();
 
