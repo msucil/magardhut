@@ -1,14 +1,10 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import { Post, getSortedPostsData } from '@/lib/posts'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import CategoryCard from '@/components/categoryCard/categoryCard'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
-
-  // const posts: any = props.posts;
+export default function Home() {
 
   return (
     <>
@@ -87,13 +83,4 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
       </div>
     </>
   )
-}
-
-export const getStaticProps: GetStaticProps<{ posts: Post[] }> = async (context) => {
-  const posts = getSortedPostsData();
-  return {
-    props: {
-      posts
-    }
-  };
 }

@@ -1,4 +1,3 @@
-import { Article } from "@/lib/learn";
 import Link from "next/link";
 
 export interface ArticleProps {

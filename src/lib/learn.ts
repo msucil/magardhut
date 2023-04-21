@@ -13,7 +13,8 @@ export interface Article {
     slug: string,
     date: string,
     description?: string
-    url?: string
+    url?: string,
+    category: string
 }
 
 export interface ArticleDetail extends Article {
@@ -80,6 +81,7 @@ export async function getArticleDetail(category: string, id: string) {
         title: markdown.data.title,
         date: markdown.data.date,
         description: markdown.data.description,
-        content: htmlContent
+        content: htmlContent,
+        category: markdown.data.category
     }
 };
