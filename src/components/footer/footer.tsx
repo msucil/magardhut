@@ -7,10 +7,10 @@ function Footer() {
                 <div className="row">
                     <div className="col-md-4 text-center">
                         <div ><strong>मगर ढूट</strong></div>
-                        <div>Platform for Learning Magar Language</div>
+                        <div>मगर भाषा सिक्ने सिकाउने साझा चौतारी</div>
                     </div>
                     <div className="col-md-4">
-                        <div><strong>Learn</strong></div>
+                        <div><strong>सिकौ</strong></div>
                         <ul className='list-unstyled'>
                             <li className=""><Link href='/' className='link-offset-2 link-underline link-underline-opacity-25 link-secondary'>मगर ढूट</Link></li>
                             <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/learn/vocabularies'>शब्दावलीहरू</Link></li>
@@ -25,7 +25,7 @@ function Footer() {
                 </div>
                 <div className="row">
                     <div className="col-md-12">
-                        &copy; MagarDhut | Platform for learning magar language
+                        &copy; मगर ढूट | मगर भाषा सिक्ने सिकाउने साझा चौतारी
                     </div>
                 </div>
             </div>
