@@ -1,5 +1,6 @@
 
 import PageDetail from "@/components/page-detail/page-detail";
+import { APP_ENG_TITLE, APP_TITLE } from "@/lib/constants";
 import { ArticleDetail, getArticleDetail, getArticles, getArticlesSummary } from "@/lib/learn";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
@@ -26,7 +27,7 @@ export default function ArticleDetail({ article }: InferGetStaticPropsType<typeo
     return (
         <>
             <Head>
-                <title>{`${article.title} | Grammer | Magar Dhut`}</title>
+                <title>{`${article.title} | ${article.category.title} | ${APP_TITLE} (${APP_ENG_TITLE})`}</title>
                 <meta name="description" content={article.description} />
             </Head>
             <PageDetail article={article} breadcrumbs={breadCrumbs} ></PageDetail>
