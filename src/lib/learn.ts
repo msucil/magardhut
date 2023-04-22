@@ -7,6 +7,13 @@ import remarkGfm from "remark-gfm";
 import remarkHtml from "remark-html";
 import emoji from 'remark-emoji';
 
+export interface Category {
+    title: string,
+    description?: string
+    slug: string
+    articles?: Article[]
+}
+
 export interface Article {
     id: string,
     title: string,
@@ -14,33 +21,61 @@ export interface Article {
     date: string,
     description?: string
     url?: string,
-    category: string
+    categorySlug?: string
 }
 
 export interface ArticleDetail extends Article {
+    category: Category
     content: string
 }
 
-const Category = {
-    VOCABULARIES: 'vocabularies',
-    GRAMMER: 'grammer',
-    FORMATION_OF_WORDS: 'words',
-    CONVERSATIONS: 'conversations'
-}
+const categories: Category[] = [
+    {
+        title: 'व्याकरण',
+        description: 'Learn how to read, write and speak with correct grammer in Magar Language (Dhut)',
+        slug: 'grammer'
+    },
+    {
+        title: 'शब्दावलीहरू',
+        description: 'Learn Words to increase proficency in Magar Language',
+        slug: 'vocabularies'
+    },
+    {
+        title: 'मगर भाषामा शब्द निर्माण',
+        description: 'Learn word formation',
+        slug: 'words'
+    },
+    {
+        title: 'कुराकानी',
+        description: 'Learn word formation',
+        slug: 'conversations'
+    },
+
+]
 
 const rootDirectory = path.join(process.cwd(), 'data/learn');
 
+export function getCategories(): Category[] {
+    return categories;
+}
+
+export function getCategoryBySlug(slug: string) {
+    return getCategories().find(c => c.slug === slug);
+}
+
 export function getArticlesSummary(): Article[] {
-    let summaries = [Category.CONVERSATIONS, Category.FORMATION_OF_WORDS, , Category.GRAMMER, Category.VOCABULARIES]
-        .map((c) => {
-            return getArticles(c || '');
-        })
-        
+    const summaries = getCategories().map((c) => {
+        return getArticles(c);
+    })
+
     return summaries.flat(2);
 }
 
-export function getArticles(category: string): Article[] {
-    const categoryDirectory = path.join(rootDirectory, category);
+export function getArticles(category: Category): Article[] {
+
+    const slug = getCategories().find(c => c.slug === category.slug)?.slug || '';
+
+    const categoryDirectory = path.join(rootDirectory, slug);
 
     const fileNames = fs.readdirSync(categoryDirectory);
 
@@ -59,8 +94,8 @@ export function getArticles(category: string): Article[] {
             slug: matterResult.data.slug,
             title: matterResult.data.title,
             date: matterResult.data.date,
-            category: matterResult.data.category,
-            description: matterResult.data.description
+            categorySlug: (getCategoryBySlug(matterResult.data.category) as Category).slug,
+            description: matterResult.data.description as string
         }
 
     });
@@ -87,17 +122,17 @@ export async function getArticleDetail(category: string, id: string) {
         .use(remarkGfm)
         .use(emoji)
         .use(remarkHtml, { sanitize: false })
-        // .use(rehypeSanitize)
         .process(markdown.content);
+
     const htmlContent = processedContent.toString();
 
     return {
         id: id,
-        slug: markdown.data.slug,
+        slug: markdown.data.slug as string,
         title: markdown.data.title,
         date: markdown.data.date,
         description: markdown.data.description,
         content: htmlContent,
-        category: markdown.data.category
+        category: getCategoryBySlug(markdown.data.category) as Category
     }
 };

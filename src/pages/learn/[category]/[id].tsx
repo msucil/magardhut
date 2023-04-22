@@ -12,13 +12,13 @@ const category = 'vocabularies';
 export default function ArticleDetail({ article }: InferGetStaticPropsType<typeof getStaticProps>) {
     const breadCrumbs = [
         {
-            title: 'Home',
+            title: 'मगर ढूट',
             href: '/',
             active: false,
         },
         {
-            title: `${article.category}`,
-            href: `/learn/${article.category}`,
+            title: `${article.category.title}`,
+            href: `/learn/${article.category.slug}`,
             active: false,
         }
     ]
@@ -36,10 +36,8 @@ export default function ArticleDetail({ article }: InferGetStaticPropsType<typeo
 export const getStaticPaths: GetStaticPaths = async => {
     const summaries = getArticlesSummary();
 
-    const params = summaries.map((s) => ({params: {category: s.category, id: s.id}}));
+    const params = summaries.map((s) => ({params: {category: s.categorySlug, id: s.id}}));
 
-    // const articles = getArticles(category);
-    // const ids = articles.map((a) => ({ params: { id: a.id } }));
     return {
         paths: params,
         fallback: false
