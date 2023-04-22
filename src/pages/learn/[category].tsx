@@ -1,5 +1,6 @@
 import ArticleBrief from "@/components/articleBrief";
 import PageHeader from "@/components/pageHeader";
+import { APP_ENG_TITLE, APP_KEYWORDS, APP_TITLE } from "@/lib/constants";
 import { Article, ArticleDetail, Category, getArticleDetail, getArticles, getCategories, getCategoryBySlug } from "@/lib/learn";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
@@ -17,8 +18,10 @@ export default function CategoryPage({ record }: InferGetStaticPropsType<typeof 
             {record &&
                 <>
                     <Head>
-                        <title>{`${record.title} | Magar Dhut`}</title>
-                        <meta name="description" content={record.description} />
+                        <title>{`${record.title} | ${APP_TITLE}`}</title>
+                        <meta name="description" content={record.seoDescription ?? record.description} />
+                        <meta name="title" content={`${record.seoTitle ?? record.seoTitle} | ${APP_TITLE} | ${APP_ENG_TITLE}`} />
+                        <meta name="keywords" content={APP_KEYWORDS}/>
                     </Head>
                     <div className='min-vh-100 '>
                         <PageHeader title={record.title}
