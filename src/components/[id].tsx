@@ -1,6 +1,7 @@
 
+/***
 import PageDetail from "@/components/page-detail/page-detail";
-import { ArticleDetail, getArticleDetail, getArticles } from "@/lib/learn";
+import { ArticleDetail, getArticleDetail, getArticles, getArticlesSummary } from "@/lib/learn";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { ParsedUrlQuery } from "querystring";
@@ -34,16 +35,20 @@ export default function ArticleDetail({ article }: InferGetStaticPropsType<typeo
 }
 
 export const getStaticPaths: GetStaticPaths = async => {
-    const articles = getArticles(category);
-    const ids = articles.map((a) => ({ params: { id: a.id } }));
+    const summaries = getArticlesSummary();
+
+    const params = summaries.map((s) => ({params: {category: s.category, id: s.id}}));
+
+    // const articles = getArticles(category);
+    // const ids = articles.map((a) => ({ params: { id: a.id } }));
     return {
-        paths: ids,
+        paths: params,
         fallback: false
     };
 }
 
 export const getStaticProps: GetStaticProps<{ article: ArticleDetail }> = async (context) => {
-    const { id } = context.params as ArticleParams;
+    const { category, id } = context.params as ArticleParams;
     const article = await getArticleDetail(category, id);
 
     return {
@@ -55,5 +60,8 @@ export const getStaticProps: GetStaticProps<{ article: ArticleDetail }> = async 
 }
 
 interface ArticleParams extends ParsedUrlQuery {
+    category: string,
     id: string
 }
+
+ */

@@ -33,10 +33,9 @@ export default function ContentDetail({ article, breadcrumbs }: ArticleDetailPro
                             <ol className="breadcrumb">
                                 {breadcrumbs.map((b) =>
                                     <>
-                                        <li className={`${b.active ?? 'active'} breadcrumb-item`}>
+                                        <li key={b.title} className={`${b.active ?? 'active'} breadcrumb-item`}>
                                             <Link className=" link-underline-opacity-0 link-secondary link-offset-2-hover link-underline-opacity-75-hover" href={b.href}>{b.title}</Link>
                                         </li>
-
                                     </>
                                 )}
                             </ol>

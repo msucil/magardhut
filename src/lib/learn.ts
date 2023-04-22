@@ -21,7 +21,23 @@ export interface ArticleDetail extends Article {
     content: string
 }
 
+const Category = {
+    VOCABULARIES: 'vocabularies',
+    GRAMMER: 'grammer',
+    FORMATION_OF_WORDS: 'words',
+    CONVERSATIONS: 'conversations'
+}
+
 const rootDirectory = path.join(process.cwd(), 'data/learn');
+
+export function getArticlesSummary(): Article[] {
+    let summaries = [Category.CONVERSATIONS, Category.FORMATION_OF_WORDS, , Category.GRAMMER, Category.VOCABULARIES]
+        .map((c) => {
+            return getArticles(c || '');
+        })
+        
+    return summaries.flat(2);
+}
 
 export function getArticles(category: string): Article[] {
     const categoryDirectory = path.join(rootDirectory, category);

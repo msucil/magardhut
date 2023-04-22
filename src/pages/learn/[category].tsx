@@ -1,6 +1,6 @@
 import ArticleBrief from "@/components/articleBrief";
 import PageHeader from "@/components/pageHeader";
-import { Article, ArticleDetail, getArticleDetail, getArticles } from "@/lib/learn";
+import { Article, getArticles } from "@/lib/learn";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { ParsedUrlQuery } from "querystring";
