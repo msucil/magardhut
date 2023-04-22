@@ -1,45 +1,52 @@
-import { ArticleDetail, getArticleDetail, getArticles } from "@/lib/learn";
+
+import PageDetail from "@/components/page-detail/page-detail";
+import { ArticleDetail, getArticleDetail, getArticles, getArticlesSummary } from "@/lib/learn";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { ParsedUrlQuery } from "querystring";
 
+const category = 'vocabularies';
+
 //ref: https://wallis.dev/blog/nextjs-getstaticprops-and-getstaticpaths-with-typescript
 
 export default function ArticleDetail({ article }: InferGetStaticPropsType<typeof getStaticProps>) {
+    const breadCrumbs = [
+        {
+            title: 'मगर ढूट',
+            href: '/',
+            active: false,
+        },
+        {
+            title: `${article.category.title}`,
+            href: `/learn/${article.category.slug}`,
+            active: false,
+        }
+    ]
+
     return (
         <>
             <Head>
                 <title>{`${article.title} | Grammer | Magar Dhut`}</title>
                 <meta name="description" content={article.description} />
             </Head>
-            <div className='min-vh-100 '>
-                <section className='col-md-12 bg-warning mb-3' style={{ height: ' 25vh !important' }}>
-                    <section className='text-center p-5'>
-                        <h1>{article.title}</h1>
-                        <p>{article.description}</p>
-                    </section>
-
-                </section>
-                <div className='container'>
-                    <div dangerouslySetInnerHTML={{ __html: article?.content || '' }}>
-                    </div>
-                </div>
-            </div>
+            <PageDetail article={article} breadcrumbs={breadCrumbs} ></PageDetail>
         </>);
 }
 
 export const getStaticPaths: GetStaticPaths = async => {
-    const articles = getArticles('grammer');
-    const ids = articles.map((a) => ({ params: { id: a.id } }));
+    const summaries = getArticlesSummary();
+
+    const params = summaries.map((s) => ({params: {category: s.categorySlug, id: s.id}}));
+
     return {
-        paths: ids,
+        paths: params,
         fallback: false
     };
 }
 
 export const getStaticProps: GetStaticProps<{ article: ArticleDetail }> = async (context) => {
-    const { id } = context.params as ArticleParams;
-    const article = await getArticleDetail('grammer', id);
+    const { category, id } = context.params as ArticleParams;
+    const article = await getArticleDetail(category, id);
 
     return {
         props: {
@@ -50,5 +57,6 @@ export const getStaticProps: GetStaticProps<{ article: ArticleDetail }> = async 
 }
 
 interface ArticleParams extends ParsedUrlQuery {
+    category: string,
     id: string
 }

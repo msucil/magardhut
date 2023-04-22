@@ -1,30 +1,31 @@
-import styles from './footer.module.scss';
+import Link from "next/link";
 
 function Footer() {
     return (<>
-        <footer style={{ backgroundColor: '#8080804f' }}>
+        <footer className='bg-dark text-white-50'>
             <div className="container pt-4 pb-4">
-                <div className="row bg-grey ">
+                <div className="row">
                     <div className="col-md-4 text-center">
-                        <div >Magar Dhut</div>
-                        <div>Platform for Learning Magar Language</div>
+                        <div ><strong>मगर ढूट</strong></div>
+                        <div>मगर भाषा सिक्ने सिकाउने साझा चौतारी</div>
                     </div>
                     <div className="col-md-4">
-                        <div><strong>Learn</strong></div>
-                        <ul className={styles['footer-link']}>
-                            <li className=""><a href=''>Home</a></li>
-                            <li className=""><a href=''>Vocabolaries</a></li>
-                            <li className=""><a href=''>Basic Grammer</a></li>
-                            <li className=""><a href=''>Conversation</a></li>
-                            <li className=""><a href=''>Formation of Words</a></li>
-                            <li className=""><a href=''>Dictionary</a></li>
+                        <div><strong>सिकौ</strong></div>
+                        <ul className='list-unstyled'>
+                            <li className=""><Link href='/' className='link-offset-2 link-underline link-underline-opacity-25 link-secondary'>मगर ढूट</Link></li>
+                            <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/learn/vocabularies'>शब्दावलीहरू</Link></li>
+                            <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/learn/grammer'>व्याकरण</Link></li>
+                            <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/learn/words'>शब्द निर्माण</Link></li>
+                            <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/learn/conversations'>कुराकानी</Link></li>
+                            <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/dictionary'>शब्दकोष</Link></li>
+                            <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/literature'>साहित्य</Link></li>
                         </ul>
                     </div>
                     <div className="col-md-4"></div>
                 </div>
                 <div className="row">
                     <div className="col-md-12">
-                        &copy; MagarDhut | Platform for learning magar language
+                        &copy; मगर ढूट | मगर भाषा सिक्ने सिकाउने साझा चौतारी
                     </div>
                 </div>
             </div>

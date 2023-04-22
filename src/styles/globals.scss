@@ -12,10 +12,16 @@
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/utilities";
 
+// Reboot
+@import "bootstrap/scss/reboot";
+
+// a {
+//     text-decoration: none;
+//     color: var(--bs-body-color);
+// }
 
 // Layout & components
-@import "bootstrap/scss/root";
-@import "bootstrap/scss/reboot";
+
 @import "bootstrap/scss/type";
 @import "bootstrap/scss/images";
 @import "bootstrap/scss/containers";
@@ -29,9 +35,9 @@
 @import "bootstrap/scss/nav";
 @import "bootstrap/scss/navbar";
 @import "bootstrap/scss/card";
-@import "bootstrap/scss/accordion";
+// @import "bootstrap/scss/accordion";
 @import "bootstrap/scss/breadcrumb";
-@import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/pagination";
 // @import "badge";
 // @import "alert";
 // @import "progress";
@@ -39,7 +45,7 @@
 // @import "bootstrap/scss/close";
 // @import "bootstrap/scss/toasts";
 // @import "bootstrap/scss/modal";
-// @import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/tables";
 // @import "bootstrap/scss/popover";
 // @import "bootstrap/scss/carousel";
 // @import "bootstrap/scss/spinners";
@@ -52,6 +58,8 @@
 // Utilities
 @import "bootstrap/scss/utilities/api";
 @import "bootstrap/scss/root";
+
+@import "bootstrap-icons/font/bootstrap-icons.scss";
 
 //optionsl
 // @import "bootstrap/scss/reboot";

@@ -1,8 +1,18 @@
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
+import rehypeSanitize from "rehype-sanitize";
 import { remark } from "remark";
+import remarkGfm from "remark-gfm";
 import remarkHtml from "remark-html";
+import emoji from 'remark-emoji';
+
+export interface Category {
+    title: string,
+    description?: string
+    slug: string
+    articles?: Article[]
+}
 
 export interface Article {
     id: string,
@@ -10,16 +20,62 @@ export interface Article {
     slug: string,
     date: string,
     description?: string
+    url?: string,
+    categorySlug?: string
 }
 
 export interface ArticleDetail extends Article {
+    category: Category
     content: string
 }
 
+const categories: Category[] = [
+    {
+        title: 'व्याकरण',
+        description: 'Learn how to read, write and speak with correct grammer in Magar Language (Dhut)',
+        slug: 'grammer'
+    },
+    {
+        title: 'शब्दावलीहरू',
+        description: 'Learn Words to increase proficency in Magar Language',
+        slug: 'vocabularies'
+    },
+    {
+        title: 'मगर भाषामा शब्द निर्माण',
+        description: 'Learn word formation',
+        slug: 'words'
+    },
+    {
+        title: 'कुराकानी',
+        description: 'Learn word formation',
+        slug: 'conversations'
+    },
+
+]
+
 const rootDirectory = path.join(process.cwd(), 'data/learn');
 
-export function getArticles(category: string): Article[] {
-    const categoryDirectory = path.join(rootDirectory, category);
+export function getCategories(): Category[] {
+    return categories;
+}
+
+export function getCategoryBySlug(slug: string) {
+    return getCategories().find(c => c.slug === slug);
+}
+
+export function getArticlesSummary(): Article[] {
+    const summaries = getCategories().map((c) => {
+        return getArticles(c);
+    })
+
+    return summaries.flat(2);
+}
+
+export function getArticles(category: Category): Article[] {
+
+    const slug = getCategories().find(c => c.slug === category.slug)?.slug || '';
+
+    const categoryDirectory = path.join(rootDirectory, slug);
 
     const fileNames = fs.readdirSync(categoryDirectory);
 
@@ -38,8 +94,8 @@ export function getArticles(category: string): Article[] {
             slug: matterResult.data.slug,
             title: matterResult.data.title,
             date: matterResult.data.date,
-            category: matterResult.data.category,
-            description: matterResult.data.description
+            categorySlug: (getCategoryBySlug(matterResult.data.category) as Category).slug,
+            description: matterResult.data.description as string
         }
 
     });
@@ -63,16 +119,20 @@ export async function getArticleDetail(category: string, id: string) {
     const markdown = matter(content);
 
     const processedContent = await remark()
-        .use(remarkHtml, { sanitize: true })
+        .use(remarkGfm)
+        .use(emoji)
+        .use(remarkHtml, { sanitize: false })
         .process(markdown.content);
+
     const htmlContent = processedContent.toString();
 
     return {
         id: id,
-        slug: markdown.data.slug,
+        slug: markdown.data.slug as string,
         title: markdown.data.title,
         date: markdown.data.date,
         description: markdown.data.description,
-        content: htmlContent
+        content: htmlContent,
+        category: getCategoryBySlug(markdown.data.category) as Category
     }
 };
