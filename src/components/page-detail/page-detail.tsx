@@ -5,9 +5,8 @@ import Link from "next/link";
 export interface ArticleDetailProps {
 
     article: ArticleDetail
-
-    breadcrumbs: BreadcrumbProps[]
-
+    breadcrumbs: BreadcrumbProps[],
+    background?: string
 }
 
 export interface BreadcrumbProps {
@@ -16,11 +15,11 @@ export interface BreadcrumbProps {
     active: boolean
 }
 
-export default function ContentDetail({ article, breadcrumbs }: ArticleDetailProps) {
+export default function ContentDetail({ article, breadcrumbs, background }: ArticleDetailProps) {
     return (
         <>
             <div className='min-vh-100 '>
-                <section className='bg-warning mb-3 d-flex'>
+                <section className={`${background ?? 'bg-warning'} mb-3 d-flex`}>
                     <div className={styles['page-content-header']}>
                         <h1 className={styles['page-content-title']}>{article.title}</h1>
                         <h4>{article.description}</h4>

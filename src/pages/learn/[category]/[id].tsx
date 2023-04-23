@@ -5,7 +5,6 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { ParsedUrlQuery } from "querystring";
 
-const category = 'vocabularies';
 
 //ref: https://wallis.dev/blog/nextjs-getstaticprops-and-getstaticpaths-with-typescript
 

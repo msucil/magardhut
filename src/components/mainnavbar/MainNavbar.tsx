@@ -35,7 +35,16 @@ function MainNavbar() {
               <Nav.Link href="/literatures" >
                 साहित्य
               </Nav.Link>
+              <Nav.Link href="/about" >
+                हाम्रो बारेमा
+              </Nav.Link>
             </Nav>
+            <Nav className='d-flex'>
+              <Nav.Link href="https://www.facebook.com/magar.dhuut" target='_blank' >
+                <i className="bi bi-facebook"></i>
+              </Nav.Link>
+            </Nav>
+
           </Navbar.Collapse>
         </Container>
       </Navbar>
