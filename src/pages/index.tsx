@@ -12,7 +12,7 @@ export default function Home() {
       <Head>
         <title>{APP_TITLE}</title>
         <meta name="description" content={`${APP_DESCRIPTION} ${APP_ENG_DESCRIPTION}`} />
-        <meta name="title" content={`${APP_TITLE} ${APP_ENG_TITLE}`} />
+        <meta name="title" content={`${APP_TITLE} | ${APP_ENG_TITLE}`} />
         <meta name='keywords' content={APP_KEYWORDS} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

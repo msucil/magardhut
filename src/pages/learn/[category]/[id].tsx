@@ -26,7 +26,7 @@ export default function ArticleDetail({ article }: InferGetStaticPropsType<typeo
     return (
         <>
             <Head>
-                <title>{`${article.title} | ${article.category.title} | ${APP_TITLE} (${APP_ENG_TITLE})`}</title>
+                <title>{`${article.title} | ${article.category.title} | ${APP_TITLE} | (${APP_ENG_TITLE})`}</title>
                 <meta name="description" content={article.seoDescription ?? article.description} />
                 <meta name="title" content= {article.seoTitle ?? article.title} />
                 <meta name="keywords" content={APP_KEYWORDS} />

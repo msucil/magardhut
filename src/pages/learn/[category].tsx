@@ -18,7 +18,7 @@ export default function CategoryPage({ record }: InferGetStaticPropsType<typeof 
             {record &&
                 <>
                     <Head>
-                        <title>{`${record.title} | ${APP_TITLE}`}</title>
+                        <title>{`${record.title} | ${APP_TITLE} | ${APP_ENG_TITLE}`}</title>
                         <meta name="description" content={record.seoDescription ?? record.description} />
                         <meta name="title" content={`${record.seoTitle ?? record.seoTitle} | ${APP_TITLE} | ${APP_ENG_TITLE}`} />
                         <meta name="keywords" content={APP_KEYWORDS}/>
