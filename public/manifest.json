@@ -1,0 +1,11 @@
+{
+    "name": "मगर ढूट",
+    "short_name": "मगर ढूट",
+    "icons": [
+    ],
+    "theme_color": "#FFFFFF",
+    "background_color": "#FFFFFF",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait"
+}
