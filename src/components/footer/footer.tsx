@@ -21,7 +21,22 @@ function Footer() {
                             <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/literature'>साहित्य</Link></li>
                         </ul>
                     </div>
-                    <div className="col-md-4"></div>
+                    <div className="col-md-4">
+                        <div><strong>सम्पर्क</strong></div>
+                        <ul className='list-unstyled'>
+                            <li className="">
+                                <Link href='/about' className='link-offset-2 link-underline link-underline-opacity-25 link-secondary'>हाम्रो बारेमा</Link>
+                            </li>
+                        </ul>
+
+                        <ul className='list-unstyled'>
+                            <li className="">
+                                <Link href='https://www.facebook.com/magar.dhuut' target="_blank" className='link-offset-2 link-underline-opacity-25 link-secondary'>
+                                    <i className="bi bi-facebook"></i>
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div className="row">
                     <div className="col-md-12">

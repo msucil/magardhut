@@ -1,11 +1,10 @@
-
 import PageDetail from "@/components/page-detail/page-detail";
-import { ArticleDetail, getArticleDetail, getArticles, getArticlesSummary } from "@/lib/learn";
+import { APP_ENG_TITLE, APP_KEYWORDS, APP_TITLE } from "@/lib/constants";
+import { ArticleDetail, getArticleDetail, getArticlesSummary } from "@/lib/learn";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { ParsedUrlQuery } from "querystring";
 
-const category = 'vocabularies';
 
 //ref: https://wallis.dev/blog/nextjs-getstaticprops-and-getstaticpaths-with-typescript
 
@@ -26,8 +25,10 @@ export default function ArticleDetail({ article }: InferGetStaticPropsType<typeo
     return (
         <>
             <Head>
-                <title>{`${article.title} | Grammer | Magar Dhut`}</title>
-                <meta name="description" content={article.description} />
+                <title>{`${article.title} | ${article.category.title} | ${APP_TITLE} | (${APP_ENG_TITLE})`}</title>
+                <meta name="description" content={article.seoDescription ?? article.description} />
+                <meta name="title" content= {article.seoTitle ?? article.title} />
+                <meta name="keywords" content={APP_KEYWORDS} />
             </Head>
             <PageDetail article={article} breadcrumbs={breadCrumbs} ></PageDetail>
         </>);
@@ -53,7 +54,6 @@ export const getStaticProps: GetStaticProps<{ article: ArticleDetail }> = async 
             article
         }
     };
-
 }
 
 interface ArticleParams extends ParsedUrlQuery {

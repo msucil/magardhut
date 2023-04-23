@@ -1,7 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
-import rehypeSanitize from "rehype-sanitize";
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 import remarkHtml from "remark-html";
@@ -12,6 +11,8 @@ export interface Category {
     description?: string
     slug: string
     articles?: Article[]
+    seoTitle?: string
+    seoDescription?: string
 }
 
 export interface Article {
@@ -25,29 +26,34 @@ export interface Article {
 }
 
 export interface ArticleDetail extends Article {
-    category: Category
-    content: string
+    category: Category,
+    content: string,
+    seoTitle?: string,
+    seoDescription?: string
 }
 
 const categories: Category[] = [
     {
         title: 'व्याकरण',
-        description: 'Learn how to read, write and speak with correct grammer in Magar Language (Dhut)',
+        description: 'सहि तरिकाले व्याकरण मिलाएर मगर भाषा बोल्न र लेख्न सिकौ',
+        seoDescription: 'Learn how to read, write and speak with correct grammer in Magar Language (Dhut)',
         slug: 'grammer'
     },
     {
         title: 'शब्दावलीहरू',
-        description: 'Learn Words to increase proficency in Magar Language',
+        description: 'विभिन्न सिर्सकमा मगर शब्दहरू सिकौ र आफ्नो मगर भाषा बलियो बनाऊ',
+        seoTitle: 'शब्दावलीहरू - Vocabularies',
+        seoDescription: 'Learn Words to increase proficency in Magar Language',
         slug: 'vocabularies'
     },
     {
         title: 'मगर भाषामा शब्द निर्माण',
-        description: 'Learn word formation',
+        description: 'मगर भाषामा शब्दहरू निर्माण तथा यसको रूप परिबर्तन गरि बोल्न र लेख्न सिकौ',
         slug: 'words'
     },
     {
         title: 'कुराकानी',
-        description: 'Learn word formation',
+        description: 'विभिन्न सिर्सकमा मगर भाषाका कुराकानिहरू पढौ र सजिलो सँग मगर भाषा बोल्न सिकौ',
         slug: 'conversations'
     },
 
@@ -95,7 +101,7 @@ export function getArticles(category: Category): Article[] {
             title: matterResult.data.title,
             date: matterResult.data.date,
             categorySlug: (getCategoryBySlug(matterResult.data.category) as Category).slug,
-            description: matterResult.data.description as string
+            description: matterResult.data.description || null
         }
 
     });
@@ -131,8 +137,10 @@ export async function getArticleDetail(category: string, id: string) {
         slug: markdown.data.slug as string,
         title: markdown.data.title,
         date: markdown.data.date,
-        description: markdown.data.description,
+        description: markdown.data.description || null,
         content: htmlContent,
-        category: getCategoryBySlug(markdown.data.category) as Category
+        category: getCategoryBySlug(markdown.data.category) as Category,
+        seoTitle: markdown.data.seoTitle || null,
+        seoDescription: markdown.data.seoDescription || null
     }
 };
