@@ -6,10 +6,10 @@ import { SSRProvider } from 'react-bootstrap'
 import Head from 'next/head'
 import Script from 'next/script'
 
-const GTagId = process.env.GTAG_ID;
+const GTagId = process.env.NEXT_PUBLIC_GTAG_ID;
 
 export default function App({ Component, pageProps }: AppProps) {
-  
+
   return (
     <>
       <Head>
@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
           gtag('js', new Date());
         
-          gtag('config', ${GTagId});
+          gtag('config', '${GTagId}');
           `
         }
       </Script>
