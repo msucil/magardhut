@@ -1,9 +1,7 @@
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
 import CategoryCard from '@/components/categoryCard/categoryCard'
 import { APP_DESCRIPTION, APP_ENG_DESCRIPTION, APP_ENG_TITLE, APP_KEYWORDS, APP_TITLE } from '@/lib/constants'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
