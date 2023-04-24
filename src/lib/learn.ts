@@ -41,7 +41,7 @@ const categories: Category[] = [
     },
     {
         title: 'शब्दावलीहरू',
-        description: 'विभिन्न सिर्सकमा मगर शब्दहरू सिकौ र आफ्नो मगर भाषा बलियो बनाऊ',
+        description: 'विभिन्न शिर्षकमा मगर शब्दहरू सिकौ र आफ्नो मगर भाषा बलियो बनाऊ',
         seoTitle: 'शब्दावलीहरू - Vocabularies',
         seoDescription: 'Learn Words to increase proficency in Magar Language',
         slug: 'vocabularies'
