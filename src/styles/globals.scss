@@ -68,3 +68,11 @@
 .min-vh-100 {
     min-height: 100vh !important;
 }
+
+@font-face {
+    font-family: 'magar_akkha_rik_regular';
+    src: url('../../font/magarakkhalipi-webfont.woff2') format('woff2'),
+         url('../../font/magarakkhalipi-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

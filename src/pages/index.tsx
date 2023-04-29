@@ -79,6 +79,16 @@ export default function Home() {
               />
             </div>
 
+            <div className='col-md-6'>
+              <div className='card'>
+                <div className='card-body'>
+                  <div style={{fontFamily: 'magar_akkha_rik_regular'}}>
+                    snd
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
