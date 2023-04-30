@@ -76,3 +76,19 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'akkha_rika';
+    src: url('../../font/Akkha-Rika-Lipi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.akkha {
+    font-family: 'magar_akkha_rik_regular';
+    font-size: 2rem;
+}
+
+.akkha-rika {
+    font-family: 'akkha_rika';
+}

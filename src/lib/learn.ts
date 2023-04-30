@@ -56,6 +56,11 @@ const categories: Category[] = [
         description: 'विभिन्न सिर्सकमा मगर भाषाका कुराकानिहरू पढौ र सजिलो सँग मगर भाषा बोल्न सिकौ',
         slug: 'conversations'
     },
+    {
+        title: 'अक्खा लिपि',
+        description: 'अक्खा लिपि लेख्न र पढ्न सिकौ, आफ्नो लिपि को संरक्षण तथा प्रर्बदन गराै',
+        slug: 'akkha-lipi'
+    },
 
 ]
 
