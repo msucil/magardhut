@@ -17,6 +17,7 @@ function Footer() {
                             <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/learn/grammer'>व्याकरण</Link></li>
                             <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/learn/words'>शब्द निर्माण</Link></li>
                             <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/learn/conversations'>कुराकानी</Link></li>
+                            <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/learn/akkha-lipi'>अख्खा लिपी</Link></li>
                             <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/dictionary'>शब्दकोष</Link></li>
                             <li className=""><Link className='link-offset-2 link-underline link-underline-opacity-0 link-secondary' href='/literature'>साहित्य</Link></li>
                         </ul>

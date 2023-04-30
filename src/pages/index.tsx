@@ -30,7 +30,7 @@ export default function Home() {
                 image='/undraw_Books.png'
                 title='शब्दावलीहरू (Vocabularies)'
                 route='/learn/vocabularies'
-                description='Learn Magar words to speak magar language more proficently'
+                description='विभिन्न शिर्षकमा मगर शब्दहरू सिकौ र आफ्नो मगर भाषा बलियो बनाऊ'
               />
             </div>
 
@@ -39,7 +39,7 @@ export default function Home() {
                 image='/undraw_Books.png'
                 route='/learn/grammer'
                 title='सामान्य व्याकरण (Basic Grammer)'
-                description='Learn Basic Grammer to Compose Sentence more easily'
+                description='सहि तरिकाले व्याकरण मिलाएर मगर भाषा बोल्न र लेख्न सिकौ'
               />
             </div>
 
@@ -48,7 +48,7 @@ export default function Home() {
                 image='/undraw_Book_lover.png'
                 route='/learn/words'
                 title='मगर भाषामा शब्द निर्माण (Formation of Words)'
-                description='Learn how to compose words'
+                description='मगर भाषामा शब्दहरू निर्माण तथा यसको रूप परिबर्तन गरि बोल्न र लेख्न सिकौ'
               />
             </div>
 
@@ -57,7 +57,16 @@ export default function Home() {
                 image='/undraw_Working.png'
                 title='कुराकानी (Conversation)'
                 route='/learn/conversations'
-                description='Learn how to talk with your friends and family'
+                description='विभिन्न सिर्सकमा मगर भाषाका कुराकानिहरू पढौ र सजिलो सँग मगर भाषा बोल्न सिकौ'
+              />
+            </div>
+
+            <div className="col-md-6">
+              <CategoryCard
+                image='/undraw_Post.png'
+                title='अक्खा लिपि (Akkha Lipi)'
+                route='/learn/akkha-lipi'
+                description='अक्खा लिपि लेख्न र पढ्न सिकौ, आफ्नो लिपि को संरक्षण तथा प्रर्बदन गराै'
               />
             </div>
 
@@ -66,7 +75,7 @@ export default function Home() {
                 image='/undraw_Personal_notebook.png'
                 title='शब्दकोष (Dictionary)'
                 route='/dictionary'
-                description='Browse Nepali words to know them in Magar Language'
+                description='नेपाली - मगर शब्दकोष'
               />
             </div>
 
@@ -75,10 +84,9 @@ export default function Home() {
                 image='/undraw_Post.png'
                 title='साहित्य (Literature)'
                 route='/literatures'
-                description='Read and Learn Poems, Articles in Magar Language'
+                description='मगर भाषाको कथा, कविता तथा अन्य साहित्यिक रचनाहरू पढौँ'
               />
             </div>
-
           </div>
         </div>
       </div>
