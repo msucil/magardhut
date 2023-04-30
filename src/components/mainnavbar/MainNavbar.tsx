@@ -29,6 +29,9 @@ function MainNavbar() {
               <Nav.Link href="/learn/conversations" >
                 कुराकानी
               </Nav.Link>
+              <Nav.Link href='/learn/akkha-lipi'>
+              अख्खा लिपी
+              </Nav.Link>
               <Nav.Link href="/dictionary" >
                 शब्दकोष
               </Nav.Link>
