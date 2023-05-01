@@ -46,6 +46,10 @@ function MainNavbar() {
               <Nav.Link href="https://www.facebook.com/magar.dhuut" target='_blank' >
                 <i className="bi bi-facebook"></i>
               </Nav.Link>
+
+              <Nav.Link href="https://www.tiktok.com/@magardhut" target='_blank' >
+                <i className="bi bi-tiktok"></i>
+              </Nav.Link>
             </Nav>
 
           </Navbar.Collapse>
