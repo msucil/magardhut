@@ -35,6 +35,13 @@ function Footer() {
                                 <Link href='https://www.facebook.com/magar.dhuut' target="_blank" className='link-offset-2 link-underline-opacity-25 link-secondary'>
                                     <i className="bi bi-facebook"></i>
                                 </Link>
+                                &nbsp; &nbsp; &nbsp;
+                                <Link href='https://www.tiktok.com/@magardhut' target="_blank" className='link-offset-2 link-underline-opacity-25 link-secondary'>
+                                    <i className="bi bi-tiktok"></i>
+                                </Link>
+                            </li>
+                            <li>
+                               <i className="bi bi-envelope-at"></i> magardhut.app@gmail.com
                             </li>
                         </ul>
                     </div>
