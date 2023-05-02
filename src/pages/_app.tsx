@@ -8,6 +8,7 @@ import Script from 'next/script'
 
 const GTagId = process.env.NEXT_PUBLIC_GTAG_ID;
 const SHARETHIS_PROPERTY = process.env.NEXT_PUBLIC_SHARETHIS_PROPERTY;
+const SHARETHIS_SOP = process.env.NEXT_PUBLIC_SHARETHIS_SOP;
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -27,7 +28,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <Layout>
           <Component {...pageProps} />
           <Analytics />
-          <div className="sharethis-sticky-share-buttons"></div>
+          <div className="sharethis-sticky-share-buttons" id='st'
+            
+           onLoad={() => document.getElementById('st-1')?.classList.remove('st-hidden')}
+           ></div>
         </Layout>
       </SSRProvider>
 
@@ -48,6 +52,36 @@ export default function App({ Component, pageProps }: AppProps) {
       </Script>
 
       <Script strategy='lazyOnload' src={`https://platform-api.sharethis.com/js/sharethis.js#property=${SHARETHIS_PROPERTY}&product=sticky-share-buttons&source=platform`}></Script>
+      <Script strategy='lazyOnload' src={`https://platform-api.sharethis.com/js/sharethis.js#property=${SHARETHIS_SOP}&product=sop`}></Script>
+      <Script id='showShareThis' strategy='lazyOnload' type='text/javascript'>
+        {`
+          // const st = document.getElementById('st-1');
+          // console.log('sthello', st);
+
+          
+          // st.classList.remove('st-hidden');
+          // st.classList.add('st-show');
+
+          window.addEventListener("load", (event) => {
+            alert(event);
+          });
+
+          
+          window.addEventListener('load', (evt) => {
+            alert('hello event');
+            console.log(evt);
+            const st = document.getElementById('st-1');
+            console.log('sthello', st);
+            
+            st.classList.remove('st-hidden');
+            st.classList.add('st-show');
+                  });
+        `}
+      </Script>
+
+      <style>
+        
+      </style>
     </>
   )
 }
