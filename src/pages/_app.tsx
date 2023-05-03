@@ -7,6 +7,8 @@ import Head from 'next/head'
 import Script from 'next/script'
 
 const GTagId = process.env.NEXT_PUBLIC_GTAG_ID;
+const SHARETHIS_PROPERTY = process.env.NEXT_PUBLIC_SHARETHIS_PROPERTY;
+const SHARETHIS_SOP = process.env.NEXT_PUBLIC_SHARETHIS_SOP;
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -20,11 +22,14 @@ export default function App({ Component, pageProps }: AppProps) {
 
         <link rel="manifest" href="/manifest.json" />
         <link rel='icon' href='/undraw_Reading_list_192X192.png' />
+        {/* <script async src={`https://platform-api.sharethis.com/js/sharethis.js#property=${SHARETHIS_PROPERTY}&product=sticky-share-buttons&source=platform`}></script> */}
+        {/*  */}
       </Head>
       <SSRProvider>
         <Layout>
           <Component {...pageProps} />
           <Analytics />
+          <div className="sharethis-sticky-share-buttons"/>
         </Layout>
       </SSRProvider>
 
@@ -43,6 +48,13 @@ export default function App({ Component, pageProps }: AppProps) {
           `
         }
       </Script>
+
+      <Script strategy='lazyOnload' src={`https://platform-api.sharethis.com/js/sharethis.js#property=${SHARETHIS_PROPERTY}&product=sticky-share-buttons&source=platform`}></Script>
+      <Script strategy='lazyOnload' src={`https://platform-api.sharethis.com/js/sharethis.js#property=${SHARETHIS_SOP}&product=sop`}></Script>
+
+      <style>
+        
+      </style>
     </>
   )
 }
