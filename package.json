@@ -31,6 +31,7 @@
     "remark-gfm": "^3.0.1",
     "remark-html": "^15.0.2",
     "remark-rehype": "^10.1.0",
+    "sharethis-reactjs": "^1.6.0",
     "typescript": "5.0.3"
   },
   "devDependencies": {

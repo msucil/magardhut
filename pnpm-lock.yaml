@@ -67,6 +67,9 @@ dependencies:
   remark-rehype:
     specifier: ^10.1.0
     version: 10.1.0
+  sharethis-reactjs:
+    specifier: ^1.6.0
+    version: 1.6.0
   typescript:
     specifier: 5.0.3
     version: 5.0.3
@@ -5016,6 +5019,10 @@ packages:
     resolution: {integrity: sha512-owoXEFjWRllis8/M1Q+Cw5k8ZH40e3zhp/ovX+Xr/vi1qj6QesbyXXViFbpNvWvPNAD62SutwEXavefrLJWj7w==}
     dependencies:
       randombytes: 2.1.0
+    dev: false
+
+  /sharethis-reactjs@1.6.0:
+    resolution: {integrity: sha512-cYrf9OgStwfOjPrHhk/0SpFuJNFQQU6OY7pWlhWtu3smuF+rYNF+vOL4aM/pwaP1QGwwrEuHTAqfpG3OWXPIag==}
     dev: false
 
   /shebang-command@2.0.0:

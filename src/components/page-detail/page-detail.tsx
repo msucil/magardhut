@@ -1,6 +1,7 @@
 import { ArticleDetail } from "@/lib/learn";
 import styles from './page-detail.module.scss'
 import Link from "next/link";
+import { InlineReactionButtons } from "sharethis-reactjs";
 
 export interface ArticleDetailProps {
 
@@ -41,6 +42,7 @@ export default function ContentDetail({ article, breadcrumbs, background }: Arti
                         </nav>
                         <div dangerouslySetInnerHTML={{ __html: article?.content || '' }}>
                         </div>
+                        
                     </article>
                 </div>
             </div>
