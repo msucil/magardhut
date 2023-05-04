@@ -2,6 +2,7 @@ import { ArticleDetail } from "@/lib/learn";
 import styles from './page-detail.module.scss'
 import Link from "next/link";
 import { InlineReactionButtons } from "sharethis-reactjs";
+import Script from "next/script";
 
 export interface ArticleDetailProps {
 
@@ -42,10 +43,29 @@ export default function ContentDetail({ article, breadcrumbs, background }: Arti
                         </nav>
                         <div dangerouslySetInnerHTML={{ __html: article?.content || '' }}>
                         </div>
-                        
+                        <hr/>
+                        <div id="disqus_thread"></div>
+
                     </article>
                 </div>
             </div>
+
+            <Script id="disqusComment" type="text/javascript"  strategy="lazyOnload">
+                {`
+    
+                const disqus_config = function () {
+                    this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = ${article.category.slug + '-' + article.slug}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+
+                (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                            s.src = 'https://magardhut.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                    })();
+                `}
+            </Script>
         </>
     );
 }
